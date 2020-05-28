@@ -74,10 +74,16 @@
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.
 			if($url != 'depoimentos' && $url != 'servicos'){
-				$pagina404 = true;
-				include('pages/404.php');
+				$urlPar = explode('/', $url)[0];
+				if ($urlPar != 'noticias') {
+					$pagina404 = true;
+					require_once 'pages/404.php';
+				} else {
+					require_once 'pages/noticias.php';
+				}
+				
 			}else{
-				include('pages/home.php');
+				require_once 'pages/home.php';
 			}
 		}
 

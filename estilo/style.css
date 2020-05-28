@@ -511,6 +511,126 @@ section.container-portal {
 	background-size: 100% 100%;
 }
 
+.conteudo-portal {
+	float: left;
+	width: 70%;
+	padding-left: 50px;
+}
+
+.header-conteudo-portal {
+	color: #333864;
+}
+
+.header-conteudo-portal h2 {
+	font-size: 25px;
+	font-weight: normal;
+}
+
+.header-conteudo-portal h2 > span {
+	border-bottom: 4px solid #333864;
+	font-weight: bold;
+}
+
+.box-single-conteudo {
+	margin: 15px 0;
+	padding: 15px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.box-single-conteudo h2 {
+	color: #646464;
+	font-weight: normal;
+	font-size: 22px;
+}
+
+.box-single-conteudo p {
+	color: #646464;
+	font-weight: lighter;
+	font-size: 15px;
+	margin-top: 8px;
+}
+
+.box-single-conteudo a {
+	background: #00B95C;
+	display: block;
+	width: 113px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	padding: 0 3px;
+	font-size: 15px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+.paginator {
+	text-align: center;
+}
+
+.paginator a {
+	margin: 0 5px;
+	text-decoration: none;
+	display: inline-block;
+	padding: 6px 12px;
+	border: 1px solid rgb(220, 220, 220);
+	color: rgb(100, 100, 100);
+}
+
+.paginator a:hover {
+	background: rgb(220, 220, 220);
+	text-decoration: underline;
+}
+
+.paginator a.active-page {
+	background: rgb(220, 220, 220);
+}
+
+/* notícia single estilos */
+.noticia-single {
+	padding: 40px 0;
+	color: #646464;
+}
+
+.noticia-single h1 {
+	font-size: 33px;
+	border-bottom: 2px solid #646464;
+}
+
+.noticia-single header {
+	background-color: transparent;
+}
+
+.noticia-single article {
+	margin-top: 15px;
+}
+
+.noticia-single h2,
+.noticia-single h3,
+.noticia-single h4
+.noticia-single h5
+.noticia-single h6 {
+	margin: 10px 0;
+}
+
+.noticia-single p {
+	margin: 10px 0;
+}
+
+.noticia-single ul, 
+.noticia-single ol,
+.noticia-single dl {
+	margin: 10px 0;
+	list-style-position: inside;
+}
+
+.noticia-single img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
 @media screen and (max-width: 768px){
 	img{
 		float: none !important;
@@ -531,6 +651,19 @@ section.container-portal {
 	.box-especialidade{
 		padding:40px 20px;
 		margin: 0;
+	}
+
+	.conteudo-portal {
+		padding-left: 0;
+	}
+
+	.conteudo-portal,
+	.sidebar {
+		width: 100%;
+	}
+
+	.sidebar {
+		text-align: center;
 	}
 }
 
