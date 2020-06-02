@@ -31,6 +31,10 @@
 			case 'servicos':
 				echo '<target target="servicos" />';
 				break;
+
+			case 'descricao-autor':
+				echo '<target target="descricao-autor" />';
+				break;
 		}
 	?>
 	<div class="sucesso">Formulário enviado com sucesso!</div>
@@ -73,7 +77,7 @@
 			include('pages/'.$url.'.php');
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.
-			if($url != 'depoimentos' && $url != 'servicos'){
+			if($url != 'depoimentos' && $url != 'servicos' && $url != 'descricao-autor'){
 				$urlPar = explode('/', $url)[0];
 				if ($urlPar != 'noticias') {
 					$pagina404 = true;

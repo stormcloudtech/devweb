@@ -501,6 +501,21 @@ section.container-portal {
 	font-weight: lighter;
 }
 
+.autor-box-portal p a {
+	background: #00B95C;
+	display: block;
+	width: 113px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	padding: 0 3px;
+	font-size: 15px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
 .box-img-autor {
 	width: 160px;
 	height: 160px;

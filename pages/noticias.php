@@ -16,8 +16,8 @@
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-search" aria-hidden="true"></i> Realizar uma busca</h3>
 				<form>
-					<input type="text" name="busca" placeholder="O que deseja procurar?" required />
-					<input type="submit" name="acao" value="Pesquisar!" />
+					<input type="text" name="parametro" placeholder="O que deseja procurar?" required />
+					<input type="submit" name="buscar" value="Pesquisar!" />
 				</form>
 			</div>
 			<!-- box-content-sidebar -->
@@ -25,8 +25,15 @@
 				<h3><i class="fa fa-list-ul" aria-hidden="true"></i> Selecione a categoria</h3>
 				<form>
 					<select name="categoria">
-						<option value="esportes">Esportes</option>
-						<option value="geral">Geral</option>
+						<?php 
+							$categorias = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC');
+							$categorias->execute();
+							$categorias = $categorias->fetchAll();
+
+							foreach($categorias as $key => $value) :
+						?>
+							<option value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
+						<?php endforeach; ?>
 					</select>
 				</form>
 			</div>
@@ -37,10 +44,13 @@
 					<div class="box-img-autor"></div>
 					<!-- box-img-autor -->
 					<div class="texto-autor-portal text-center">
-						<h3>Gustavo Alves</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamc</p>
+						<?php 
+							$infoSite = MySql::conectar()->prepare('SELECT * FROM `tb_site.config`');
+							$infoSite->execute();
+							$infoSite = $infoSite->fetch();
+						?>
+						<h3><?= $infoSite['nome_autor']; ?></h3>
+						<p><?= substr($infoSite['descricao'], 0, 400).'...' ?><a href="<?= INCLUDE_PATH; ?>descricao-autor">Saiba Mais</a></p>
 					</div>
 					<!-- texto-autor-portal -->
 				</div>

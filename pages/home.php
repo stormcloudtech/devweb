@@ -14,7 +14,7 @@
 		<div class="bullets"></div><!--bullets-->
 </section><!--banner-principal-->
 
-	<section class="descricao-autor">
+	<section class="descricao-autor" id="descricao-autor">
 		<div class="center">
 		<div class="w50 left">
 			<h2><?php echo $infoSite['nome_autor']; ?></h2>

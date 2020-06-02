@@ -20,12 +20,12 @@
 
 		<div class="form-group">
 			<label>Título do site:</label>
-			<input type="text" name="titulo" value="<?php echo $site['titulo'] ?>" />
+			<input type="text" name="titulo" value="<?= $site['titulo']; ?>" />
 		</div><!--form-group-->
 
 		<div class="form-group">
 			<label>Nome do autor do site:</label>
-			<input type="text" name="nome_autor" value="<?php echo $site['nome_autor'] ?>" />
+			<input type="text" name="nome_autor" value="<?= $site['nome_autor']; ?>" />
 		</div><!--form-group-->
 
 		<div class="form-group">
