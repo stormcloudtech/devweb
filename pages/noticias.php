@@ -36,7 +36,7 @@
 
 							foreach($categorias as $key => $value) :
 						?>
-							<option <?php if ($value['slug'] == $url[1]) echo 'selected'; ?> value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
+							<option <?php if (isset($url[1]) && $value['slug'] == $url[1]) echo 'selected'; ?> value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
 						<?php endforeach; ?>
 					</select>
 				</form>

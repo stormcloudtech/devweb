@@ -22,8 +22,8 @@
 <body>
 <base base="<?php echo INCLUDE_PATH; ?>" />
 	<?php
-		$url = isset($_GET['url']) ? $_GET['url'] : 'home';
-		switch ($url) {
+		$url[0] = isset($_GET['url']) ? $_GET['url'] : 'home';
+		switch ($url[0]) {
 			case 'depoimentos':
 				echo '<target target="depoimentos" />';
 				break;
@@ -73,12 +73,12 @@
 	<div class="container-principal">
 	<?php
 
-		if(file_exists('pages/'.$url.'.php')){
-			include('pages/'.$url.'.php');
+		if(file_exists('pages/'.$url[0].'.php')){
+			include('pages/'.$url[0].'.php');
 		}else{
 			//Podemos fazer o que quiser, pois a página não existe.
-			if($url != 'depoimentos' && $url != 'servicos' && $url != 'descricao-autor'){
-				$urlPar = explode('/', $url)[0];
+			if($url[0] != 'depoimentos' && $url != 'servicos' && $url != 'descricao-autor'){
+				$urlPar = explode('/', $url[0])[0];
 				if ($urlPar != 'noticias') {
 					$pagina404 = true;
 					require_once 'pages/404.php';
@@ -108,7 +108,7 @@
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
-	<?php if (in_array('noticias', $url)) : ?>
+	<?php if (strstr($url[0], 'noticias')) : ?>
 		<script>
 			$(function(){
 				$('select').change(function(){
@@ -118,7 +118,7 @@
 		</script>
 	<?php endif; ?>
 	<?php
-		if($url == 'contato'){
+		if($url[0] == 'contato'){
 	?>
 	<?php } ?>
 	<!--<script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>-->
