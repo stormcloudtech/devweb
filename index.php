@@ -108,6 +108,15 @@
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
+	<?php if (in_array('noticias', $url)) : ?>
+		<script>
+			$(function(){
+				$('select').change(function(){
+					location.href = include_path + 'noticias/' + $(this).val();
+				});
+			});
+		</script>
+	<?php endif; ?>
 	<?php
 		if($url == 'contato'){
 	?>

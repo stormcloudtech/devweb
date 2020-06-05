@@ -1,6 +1,9 @@
 <?php 
 	$url = explode('/', $_GET['url']);
 	if (!isset($url[2])) :
+		$categoria = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` WHERE slug = ?');
+		@$categoria->execute(array($url[1]));
+		$categoria = $categoria->fetch();
 ?>
 <section class="header-noticias">
 	<div class="center">
@@ -25,6 +28,7 @@
 				<h3><i class="fa fa-list-ul" aria-hidden="true"></i> Selecione a categoria</h3>
 				<form>
 					<select name="categoria">
+						<option value="">Todas as categorias</option>
 						<?php 
 							$categorias = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC');
 							$categorias->execute();
@@ -32,7 +36,7 @@
 
 							foreach($categorias as $key => $value) :
 						?>
-							<option value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
+							<option <?php if ($value['slug'] == $url[1]) echo 'selected'; ?> value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
 						<?php endforeach; ?>
 					</select>
 				</form>
@@ -62,28 +66,44 @@
 
 		<div class="conteudo-portal">
 			<div class="header-conteudo-portal">
-				<!-- <h2>Visualizando todos os Posts</h2> -->
-				<h2>Visualizando posts em <span>Esportes</span></h2>
+				<?php 
+					if (!isset($categoria['nome'])) :
+
+				?>
+					<h2>Visualizando todos os Posts</h2>
+				<?php else: ?>
+					<h2>Visualizando posts em <span><?= $categoria['nome']; ?></span></h2>
+				<?php endif; ?>
+
+				<?php 
+					$query = 'SELECT * FROM `tb_site.noticias`';
+
+					if(isset($categoria['nome'])) {
+						$query .= ' WHERE categoria_id = '.$categoria['id'];
+					}
+
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute();
+					$noticias = $sql->fetchAll();
+				?>
 			</div>
 			<!-- header-conteudo-portal -->
 			<?php 
-				for($i = 0; $i < 5; $i++) :
+				foreach($noticias as $key => $value) :
+					$sql = MySql::conectar()->prepare('SELECT slug FROM `tb_site.categorias` WHERE id = ?');
+					$sql->execute(array($value['categoria_id']));
+					$categoriaNome = $sql->fetch()['slug'];
 			?>
 			<div class="box-single-conteudo">
-				<h2>27/05/2020 - Conheça os eleitos para ga...</h2>
+				<h2><?= date('d/m/Y', strtotime($value['data'])); ?> - <?= $value['titulo']; ?></h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<?= strip_tags(substr($value['conteudo'], 0, 300)).'...'; ?>
 				</p>
-				<a href="<?= INCLUDE_PATH; ?>noticias/esportes/nome-do-post">Leia mais</a>
+				<a href="<?= INCLUDE_PATH; ?>noticias/<?= $categoriaNome; ?>/<?= $value['slug']; ?>">Leia mais</a>
 			</div>
 			<!-- box-single-conteudo -->
 			<?php 
-				endfor;
+				endforeach;
 			?>
 			<div class="paginator">
 				<a class="active-page" href="#">1</a>
