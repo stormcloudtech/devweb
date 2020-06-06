@@ -18,7 +18,7 @@
 		<div class="sidebar">
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-search" aria-hidden="true"></i> Realizar uma busca</h3>
-				<form>
+				<form method="POST">
 					<input type="text" name="parametro" placeholder="O que deseja procurar?" required />
 					<input type="submit" name="buscar" value="Pesquisar!" />
 				</form>
@@ -82,6 +82,16 @@
 					if(isset($categoria['nome'])) {
 						$query .= ' WHERE categoria_id = '.$categoria['id'];
 					}
+
+					if (isset($_POST['parametro'])) {
+						$busca = $_POST['parametro'];
+						if (strstr($query, 'WHERE')) {
+							$query .= ' AND titulo LIKE "%'.$busca.'%"';
+						} else {
+							$query .= ' WHERE titulo LIKE "%'.$busca.'%"';
+						}
+					}
+
 					if (isset($_GET['pagina'])) {
 						
 						$pagina = (int)$_GET['pagina'];
@@ -112,7 +122,7 @@
 				<p>
 					<?= strip_tags(substr($value['conteudo'], 0, 300)).'...'; ?>
 				</p>
-				<a href="<?= INCLUDE_PATH; ?>noticias/<?= $categoriaNome; ?>/<?= $value['slug']; ?>">Leia mais</a>
+				<a href="<?= INCLUDE_PATH; ?>noticias/<?= $categoriaSlug; ?>/<?= $value['slug']; ?>">Leia mais</a>
 			</div>
 			<!-- box-single-conteudo -->
 			<?php 
@@ -135,7 +145,11 @@
 					for ($i = 1; $i <= $totalPaginas; $i++) {
 						//$catStr = (isset($categoria['nome'])) ? $categoriaSlug : '';
 						if (isset($categoria['nome']) && !empty($categoria['nome'])) {
-							$catStr = '/'.$categoriaSlug;
+							if (isset($categoriaSlug)) {
+								$catStr = '/'.$categoriaSlug;
+							} else {
+								$catStr = '';
+							}
 						} else {
 							$catStr = '';
 						}
