@@ -1,7 +1,7 @@
 <div id="map"></div>
 <div class="contato-container">
 	<div class="center">
-		<form method="post" action="">
+		<form method="post" action="" class="ajax-form">
 			<input required type="text" name="nome" placeholder="Nome...">
 			<div></div>
 			<input required type="text" name="email" placeholder="E-mail..">
@@ -13,5 +13,8 @@
 			<input type="hidden" name="identificador" value="form_contato" />
 			<input type="submit" name="acao" value="Enviar">
 		</form>
-	</div><!--center-->
-</div><!--contato-container-->
+		<!-- ajax-form -->
+	</div>
+	<!--center-->
+</div>
+<!--contato-container-->

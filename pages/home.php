@@ -4,15 +4,19 @@
 	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form3.jpg');" class="banner-single"></div><!--banner-single-->
 	<div class="overlay"></div><!--overlay-->
 		<div class="center">
-		<form method="post">
+		<form method="post" class="ajax-form">
 			<h2>Qual o seu melhor e-mail?</h2>
 			<input type="email" name="email" required />
 			<input type="hidden" name="identificador" value="form_home" />
 			<input type="submit" name="acao" value="Cadastrar!">
 		</form>
-		</div><!--center-->
-		<div class="bullets"></div><!--bullets-->
-</section><!--banner-principal-->
+		<!-- ajax-form -->
+		</div>
+		<!--center-->
+		<div class="bullets"></div>
+		<!--bullets-->
+</section>
+<!--banner-principal-->
 
 	<section class="descricao-autor" id="descricao-autor">
 		<div class="center">
