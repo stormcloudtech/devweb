@@ -76,10 +76,20 @@
 				<?php endif; ?>
 
 				<?php 
+					$porPagina = 2;
 					$query = 'SELECT * FROM `tb_site.noticias`';
 
 					if(isset($categoria['nome'])) {
 						$query .= ' WHERE categoria_id = '.$categoria['id'];
+					}
+					if (isset($_GET['pagina'])) {
+						
+						$pagina = (int)$_GET['pagina'];
+						$queryPg = ($pagina - 1) * $porPagina;
+						$query .= ' ORDER BY id DESC LIMIT '.$queryPg.','.$porPagina;	
+					} else {
+						$pagina = 1;
+						$query .= ' ORDER BY id DESC LIMIT 0, '.$porPagina;
 					}
 
 					$sql = MySql::conectar()->prepare($query);
@@ -90,9 +100,12 @@
 			<!-- header-conteudo-portal -->
 			<?php 
 				foreach($noticias as $key => $value) :
-					$sql = MySql::conectar()->prepare('SELECT slug FROM `tb_site.categorias` WHERE id = ?');
+					$sql = MySql::conectar()->prepare('SELECT nome, slug FROM `tb_site.categorias` WHERE id = ?');
 					$sql->execute(array($value['categoria_id']));
-					$categoriaNome = $sql->fetch()['slug'];
+					$categoriaFetch = $sql->fetch();
+
+					$categoriaNome = $categoriaFetch['nome'];
+					$categoriaSlug = $categoriaFetch['slug'];
 			?>
 			<div class="box-single-conteudo">
 				<h2><?= date('d/m/Y', strtotime($value['data'])); ?> - <?= $value['titulo']; ?></h2>
@@ -105,12 +118,34 @@
 			<?php 
 				endforeach;
 			?>
+
+			<?php 
+				$query = 'SELECT * FROM `tb_site.noticias` ';
+				if(isset($categoria['nome'])) {
+						$categoriaId = (int)$categoria['id'];
+						$query .= ' WHERE categoria_id = '.$categoriaId;
+					}
+				$totalPaginas = MySql::conectar()->prepare($query);
+				$totalPaginas->execute();
+				$totalPaginas = ceil($totalPaginas->rowCount() / $porPagina);
+			?>	
+
 			<div class="paginator">
-				<a class="active-page" href="#">1</a>
-				<!-- active-page -->
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
+				<?php 
+					for ($i = 1; $i <= $totalPaginas; $i++) {
+						//$catStr = (isset($categoria['nome'])) ? $categoriaSlug : '';
+						if (isset($categoria['nome']) && !empty($categoria['nome'])) {
+							$catStr = '/'.$categoriaSlug;
+						} else {
+							$catStr = '';
+						}
+						if ((int)$pagina == $i)
+							echo '<a class="active-page" href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+						else 
+							echo '<a href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+						// 15:40 - PHP portal 3/5
+					}
+				?>
 			</div>
 			<!-- paginator -->
 		</div>
