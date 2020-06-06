@@ -1,94 +1,184 @@
-<section class="banner-container">
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form.jpg');" class="banner-single"></div><!--banner-single-->
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form2.jpg');" class="banner-single"></div><!--banner-single-->
-	<div style="background-image: url('<?php echo INCLUDE_PATH; ?>images/bg-form3.jpg');" class="banner-single"></div><!--banner-single-->
-	<div class="overlay"></div><!--overlay-->
-		<div class="center">
-		<form method="post" class="ajax-form">
-			<h2>Qual o seu melhor e-mail?</h2>
-			<input type="email" name="email" required />
-			<input type="hidden" name="identificador" value="form_home" />
-			<input type="submit" name="acao" value="Cadastrar!">
-		</form>
-		<!-- ajax-form -->
-		</div>
-		<!--center-->
-		<div class="bullets"></div>
-		<!--bullets-->
+<section class="main-bg">
+    <div class="overlay"></div>
+    <div class="container">
+        <h2 class="wow bounceInLeft">Especialista em gerar resultados<br /> para o seu negócio!</h2>
+        <p class="wow bounceInLeft">
+            Soluções em desenvolvimento de aplicativos, sites e sistemas. Seu negócio estará em um outro patamar e receberá destaque perante a concorrência. Atendimento qualificado e diferenciado, focado nas suas necessidades.
+		</p>
+        <a href="contato.html" class="btn-contato wow bounceInLeft">
+           Entre em Contato 
+        </a>
+        <!-- btn-contato -->
+    </div>
+    <!-- container -->
 </section>
-<!--banner-principal-->
+<!-- main-bg -->
 
-	<section class="descricao-autor" id="descricao-autor">
-		<div class="center">
-		<div class="w50 left">
-			<h2><?php echo $infoSite['nome_autor']; ?></h2>
-			<p><?php echo $infoSite['descricao']; ?></p>
-		</div><!--w50-->
-		<div class="w50 left">
-			<!--Pegar imagem depois-->
-			<img class="right" src="<?php echo INCLUDE_PATH; ?>images/foto.jpg" />
-		</div><!--w50-->
-		<div class="clear"></div>
-		</div><!--center-->
-	</section><!--descricao-autor-->
+<section class="servicos" id="servicos">
+    <div class="container">
+        <div class="line-text">
+            <div style="width:75px;"></div>
+            <h2>Serviços</h2>
+        </div>
+        <!-- line-text -->
+        <div class="icones-servicos">
+            <div class="box-icone-single wow bounceInDown">
+                <h2 class="wow rubberBand"><i class="fas fa-laptop-code"></i></h2>
+                <h3>Websites</h3>
+                <p>
+                    Websites, landing pages, lojas virtuais, portais, páginas de captura e intranets.
+            </div>
+            <!-- box-icone-single -->
+            <div class="box-icone-single wow bounceInDown">
+                <h2 class="wow rubberBand"><i class="fas fa-address-card"></i></h2>
+                <h3>Sistemas</h3>
+                <p>
+                    Sistemas comerciais para cadastro de clientes, controle de estoque, gestão de funcionários, ERPs, integração com NF-e (Nota Fiscal Eletrônica).
+            </div>
+            <!-- box-icone-single -->
+            <div class="box-icone-single wow bounceInDown">
+                <h2 class="wow rubberBand"><i class="fas fa-mobile-alt"></i></i>
+                </h2>
+                <h3>Aplicativos</h3>
+                <p>
+                    Aplicativos de delivery, compras, guias comerciais, catálogos de venda, galeria de fotos, etc
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- icones-diferenciais -->
+    </div>
+    <!-- container -->
+</section>
+<!-- servicos -->
 
-	<section class="especialidades">
-		
-		<div class="center">
-			<h2 class="title">Especialidades</h2>
-			<div class="w33 left box-especialidade">
-					<h3><i class="<?php echo $infoSite['icone1']; ?>" aria-hidden="true"></i></h3>
-					<h4>Websites</h4>
-					<p><?php echo $infoSite['descricao1']; ?></p>
-			</div><!--box-especialidade-->
-			<div class="w33 left box-especialidade wow bounceInDown">
-				<h3><i class="<?php echo $infoSite['icone2']; ?>" aria-hidden="true"></i></h3>
-				<h4>Sistemas</h4>
-				<p><?php echo $infoSite['descricao2']; ?></p>
-			</div><!--box-especialidade-->
-			<div class="w33 left box-especialidade wow bounceInDown">
-				<h3><i class="<?php echo $infoSite['icone3']; ?>" aria-hidden="true"></i></h3>
-				<h4>Aplicativos</h4>
-				<p><?php echo $infoSite['descricao3']; ?></p>
-			</div><!--box-especialidade-->
-			
-			<div class="clear"></div>
-		</div><!--center-->
+<section class="sobre-equipe" id="sobre-equipe">
+    <div class="container">
+        <div class="equipe-container">
+            <div class="line-text">
+                <div style="width:45px;"></div>
+                <h2>Equipe</h2>
+            </div>
+            <!-- line-text -->
+            <div class="avatar-box">
+                <div class="img-avatar" style="background-image:url(<?= INCLUDE_PATH; ?>images/perfil.jpg);"></div>
+                <div class="descricao-avatar">
+                    <h3>Gustavo Alves</h3>
+                    <p>Desenvolvedor Web Full-Stack</p>
+                </div>
+                <!-- descricao-avatar -->
+            </div>
+            <!-- avatar-box -->
+        </div>
+        <!-- equipe-container -->
+        <div class="sobre-container">
+            <div class="line-text">
+                <div style="width:35px;"></div>
+                <h2>Sobre</h2>
+            </div>
+            <!-- line-text -->
 
-	</section><!--especialidades-->
+            <p>
+                Sou especialista no desenvolvimento de Websites responsivos (se adaptam a qualquer dispositivo), com painel administrativo para que você ou sua equipe possa atualizar seu site de qualquer lugar e em qualquer dispositivo, sem a necessidade de uma equipe técnica para isso.
+            </p>
+        </div>
+        <!-- sobre-container -->
+    </div>
+    <!-- container -->
+</section>
+<!-- sobre-equipe -->
 
-	<section class="extras">
+<section class="posts-recentes">
+    <div class="container">
+        <div class="line-text">
+            <div style="width:35px;"></div>
+            <h2>Posts Recentes</h2>
+        </div>
+        <!-- line-text -->
+        <div class="posts-recentes-container">
+            <div class="posts-recentes-box-single wow bounceInUp">
+                <div class="posts-recentes-box-img">
+                    <img src="<?= INCLUDE_PATH; ?>images/blog/seo.jpg" />
+                </div>
+                <!-- posts-recentes-box-img -->
+                <div class="posts-recentes-box-text">
+                    <h4>Como otimizar seus resultados de busca com SEO</h4>
+                    <p>Aprenda neste post como uma boa estratégia de seu pode ser crucial para o seu negócio.</p>
+                </div>
+                <!-- posts-recentes-box-text- -->
+                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
+                <div class="clear"></div>
+                <div class="borda-baixo"></div>
+            </div>
+            <!-- posts-recentes-box-single -->
+            <div class="posts-recentes-box-single wow bounceInUp">
+                <div class="posts-recentes-box-img">
+                    <img src="<?php INCLUDE_PATH; ?>images/blog/vendas.png" />
+                </div>
+                <!-- posts-recentes-box-img -->
+                <div class="posts-recentes-box-text">
+                    <h4>As 5 melhores plataformas de venda online</h4>
+                    <p>Confira as 5 melhores plataformas para você começar a vender mais hoje mesmo.</p>
+                </div>
+                <!-- posts-recentes-box-text -->
+                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
+                <div class="clear"></div>
+                <div class="borda-baixo"></div>
+            </div>
+            <!-- posts-recentes-box-single -->
+            <div class="posts-recentes-box-single wow bounceInUp">
+                <div class="posts-recentes-box-img">
+                    <img src="<?php INCLUDE_PATH; ?>images/blog/brindes.jpg" />
+                </div>
+                <!-- posts-recentes-box-img -->
+                <div class="posts-recentes-box-text">
+                    <h4>Fidelize seus clientes através de brindes</h4>
+                    <p>Brindes são uma forma excelente para a fidelização de seus clientes e parceiros de negócio neste natal legal deste ano.</p>
+                </div>
+                <!-- posts-recentes-box-text -->
+                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
+                <div class="clear"></div>
+                <div class="borda-baixo"></div>
+            </div>
+            <!-- posts-recentes-box-single -->
+        </div>
+        <!-- posts-recentes-container -->
+    </div>
+    <!-- container -->
+</section>
+<!-- posts-recentes -->
 
-		<div class="center">
-			<div id="depoimentos" class="w50 left depoimentos-container">
-				<h2 class="title">Depoimentos dos nossos clientes</h2>
-				<?php
-					$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.depoimentos` ORDER BY order_id ASC LIMIT 10");
-					$sql->execute();
-					$depoimentos = $sql->fetchAll();
-					foreach ($depoimentos as $key => $value) {
-				?>
-				<div class="depoimento-single">
-					<p class="depoimento-descricao">"<?php echo $value['depoimento']; ?>"</p>
-					<p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
-				</div><!--depoimento-single-->
-				<?php } ?>
-			</div><!--w50-->
-			<div id="servicos" class="w50 left servicos-container">
-				<h2 class="title">Serviços</h2>
-				<div class="servicos">
-				<ul>
-					<?php
-					$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 10");
-					$sql->execute();
-					$servicos = $sql->fetchAll();
-					foreach ($servicos as $key => $value) {
-					?>
-					<li><?php echo $value['servico']; ?></li>
-					<?php } ?>
-				</ul>
-				</div><!--servicos-->
-			</div><!--w50-->
-			<div class="clear"></div>
-		</div><!--center-->
-	</section><!--extras-->
+<section class="contato">
+    <div class="container">
+        <div class="line-text">
+            <div style="width:75px;"></div>
+            <h2>Contato</h2>
+        </div>
+        <!-- line-text -->
+        <form action="#" class="wow bounceInLeft">
+            <div class="input-wrapper w100">
+                <input type="text" placeholder="Nome*" name="nome" id="nome" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w50">
+                <input type="email" placeholder="E-mail*" name="email" id="email" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w50">
+                <input type="tel" placeholder="Telefone" name="telefone" id="telefone" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w100">
+                <textarea placeholder="Mensagem*" required></textarea>
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w100">
+                <input class="btn-contato" type="submit" value="Enviar" />
+            </div>
+            <!-- input-wrapper -->
+            <div class="clear"></div>
+        </form>
+    </div>
+    <!-- container -->
+</section>
+<!-- contato -->
