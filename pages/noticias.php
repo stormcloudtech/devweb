@@ -76,7 +76,7 @@
 				<?php endif; ?>
 
 				<?php 
-					$porPagina = 2;
+					$porPagina = 10;
 					$query = 'SELECT * FROM `tb_site.noticias`';
 
 					if(isset($categoria['nome'])) {
