@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/animate.css" />
-	<link rel="stylesheet" href="<?= INCLUDE_PATH; ?>fonts/css/all.css" />
+	<link rel="stylesheet" href="<?= ICONS_URL; ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="palavras-chave,do,meu,site">
 	<meta name="description" content="Descrição do meu website" />
@@ -42,7 +42,7 @@
 
 	<header>
 		<div class="container">
-			<div class="logo left"><a href="<?= INCLUDE_PATH; ?>"><?= $infoSite['titulo']; ?></a></div><!--logo-->
+			<a href="<?= INCLUDE_PATH; ?>"><div class="logo left"><?= $infoSite['titulo']; ?></div><!--logo--></a>
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
@@ -78,11 +78,11 @@
 			//Podemos fazer o que quiser, pois a página não existe.
 			if($url[0] != 'servicos' && $url[0] != 'sobre-equipe'){
 				$urlPar = explode('/', $url[0])[0];
-				if ($urlPar != 'noticias') {
+				if ($urlPar != 'blog') {
 					$pagina404 = true;
 					require_once 'pages/404.php';
 				} else {
-					require_once 'pages/noticias.php';
+					require_once 'pages/blog.php';
 				}
 				
 			}else{
@@ -144,11 +144,11 @@
 
 	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
 
-	<?php if (strstr($url[0], 'noticias')) : ?>
+	<?php if (strstr($url[0], 'blog')) : ?>
 		<script>
 			$(function(){
 				$('select').change(function(){
-					location.href = include_path + 'noticias/' + $(this).val();
+					location.href = include_path + 'blog/' + $(this).val();
 				});
 			});
 		</script>

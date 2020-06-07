@@ -14,7 +14,7 @@
 
 ?>
 <div class="box-content w100">
-		<h2><i class="fa fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
+		<h2><i class="fas fa-home"></i> Painel de Controle - <?php echo NOME_EMPRESA ?></h2>
 
 		<div class="box-metricas">
 			<div class="box-metrica-single">

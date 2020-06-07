@@ -14,6 +14,7 @@
 
 	define('INCLUDE_PATH','http://localhost/gustavoalvesdev/');
 	define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
+	define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
 
 	define('BASE_DIR_PAINEL',__DIR__.'/painel');
 

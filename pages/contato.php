@@ -1,20 +1,34 @@
-<div id="map"></div>
-<div class="contato-container">
-	<div class="center">
-		<form method="post" action="" class="ajax-form">
-			<input required type="text" name="nome" placeholder="Nome...">
-			<div></div>
-			<input required type="text" name="email" placeholder="E-mail..">
-			<div></div>
-			<input required type="text" name="telefone" placeholder="Telefone...">
-			<div></div>
-			<textarea required placeholder="Sua mensagem..." name="mensagem"></textarea>
-			<div></div>
-			<input type="hidden" name="identificador" value="form_contato" />
-			<input type="submit" name="acao" value="Enviar">
-		</form>
-		<!-- ajax-form -->
-	</div>
-	<!--center-->
-</div>
-<!--contato-container-->
+<section class="contato">
+    <div class="container">
+        <div class="line-text">
+            <div style="width:75px;"></div>
+            <h2>Contato</h2>
+        </div>
+        <!-- line-text -->
+        <form action="#" class="wow bounceInLeft">
+            <div class="input-wrapper w100">
+                <input type="text" placeholder="Nome*" name="nome" id="nome" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w50">
+                <input type="email" placeholder="E-mail*" name="email" id="email" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w50">
+                <input type="tel" placeholder="Telefone" name="telefone" id="telefone" required />
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w100">
+                <textarea placeholder="Mensagem*" required></textarea>
+            </div>
+            <!-- input-wrapper -->
+            <div class="input-wrapper w100">
+                <input class="btn-contato" type="submit" value="Enviar" />
+            </div>
+            <!-- input-wrapper -->
+            <div class="clear"></div>
+        </form>
+    </div>
+    <!-- container -->
+</section>
+<!-- contato -->

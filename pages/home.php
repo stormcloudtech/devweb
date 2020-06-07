@@ -1,3 +1,8 @@
+<?php 
+
+    $postsRecentes = Blog::postsRecentes(3);
+
+?>
 <section class="main-bg">
     <div class="overlay"></div>
     <div class="container">
@@ -99,52 +104,26 @@
             <h2>Posts Recentes</h2>
         </div>
         <!-- line-text -->
+        
         <div class="posts-recentes-container">
-            <div class="posts-recentes-box-single wow bounceInUp">
-                <div class="posts-recentes-box-img">
-                    <img src="<?= INCLUDE_PATH; ?>images/blog/seo.jpg" />
-                </div>
-                <!-- posts-recentes-box-img -->
-                <div class="posts-recentes-box-text">
-                    <h4>Como otimizar seus resultados de busca com SEO</h4>
-                    <p>Aprenda neste post como uma boa estratégia de seu pode ser crucial para o seu negócio.</p>
-                </div>
-                <!-- posts-recentes-box-text- -->
-                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
-                <div class="clear"></div>
+            <?php foreach ($postsRecentes as $key => $post) : ?>
+                <div class="posts-recentes-box-single wow bounceInUp">
+                    <div class="posts-recentes-box-img">
+                        <img src="<?= INCLUDE_PATH_PAINEL; ?>uploads/<?= $post['capa']; ?>" />
+                    </div>
+                    <!-- posts-recentes-box-img -->
+                    <div class="posts-recentes-box-text">
+                        <h4><?= $post['titulo']; ?></h4>
+                        <p><?= substr(strip_tags($post['conteudo']), 0, 100).'...'; ?></p>
+                    </div>
+                    <!-- posts-recentes-box-text- -->
+                    <?php $categoriaSlug = Blog::getCategoriaSlugByCategoriaId($post['categoria_id']); ?>
+                    <a class="link-post" href="<?= INCLUDE_PATH.'blog/'.$categoriaSlug.'/'.$post['slug']; ?>"><i class="fas fa-book-reader"></i> Ler Post</a>
+                    <div class="clear"></div>
                 <div class="borda-baixo"></div>
             </div>
             <!-- posts-recentes-box-single -->
-            <div class="posts-recentes-box-single wow bounceInUp">
-                <div class="posts-recentes-box-img">
-                    <img src="<?php INCLUDE_PATH; ?>images/blog/vendas.png" />
-                </div>
-                <!-- posts-recentes-box-img -->
-                <div class="posts-recentes-box-text">
-                    <h4>As 5 melhores plataformas de venda online</h4>
-                    <p>Confira as 5 melhores plataformas para você começar a vender mais hoje mesmo.</p>
-                </div>
-                <!-- posts-recentes-box-text -->
-                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
-                <div class="clear"></div>
-                <div class="borda-baixo"></div>
-            </div>
-            <!-- posts-recentes-box-single -->
-            <div class="posts-recentes-box-single wow bounceInUp">
-                <div class="posts-recentes-box-img">
-                    <img src="<?php INCLUDE_PATH; ?>images/blog/brindes.jpg" />
-                </div>
-                <!-- posts-recentes-box-img -->
-                <div class="posts-recentes-box-text">
-                    <h4>Fidelize seus clientes através de brindes</h4>
-                    <p>Brindes são uma forma excelente para a fidelização de seus clientes e parceiros de negócio neste natal legal deste ano.</p>
-                </div>
-                <!-- posts-recentes-box-text -->
-                <a class="link-post" href="#"><i class="fas fa-book-reader"></i> Ler Post</a>
-                <div class="clear"></div>
-                <div class="borda-baixo"></div>
-            </div>
-            <!-- posts-recentes-box-single -->
+            <?php endforeach; ?>
         </div>
         <!-- posts-recentes-container -->
     </div>
