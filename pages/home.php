@@ -79,7 +79,11 @@
             <!-- line-text -->
 
             <p>
-                Sou especialista no desenvolvimento de Websites responsivos (se adaptam a qualquer dispositivo), com painel administrativo para que você ou sua equipe possa atualizar seu site de qualquer lugar e em qualquer dispositivo, sem a necessidade de uma equipe técnica para isso.
+                <?php if (strlen($infoSite['descricao']) > 720): ?>
+                    <?= $infoSite['descricao'].'...'; ?>
+                <?php else: ?>  
+                    <?= $infoSite['descricao']; ?>
+                <?php endif; ?>
             </p>
         </div>
         <!-- sobre-container -->

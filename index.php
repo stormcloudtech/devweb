@@ -42,7 +42,7 @@
 
 	<header>
 		<div class="container">
-			<div class="logo left"><a href="<?= INCLUDE_PATH; ?>">Gustavo Alves Desenvolvedor Web</a></div><!--logo-->
+			<div class="logo left"><a href="<?= INCLUDE_PATH; ?>"><?= $infoSite['titulo']; ?></a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
