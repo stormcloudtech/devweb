@@ -28,10 +28,8 @@
 					<select name="categoria">
 						<option value="">Todas as categorias</option>
 						<?php 
-							$categorias = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC');
-							$categorias->execute();
-							$categorias = $categorias->fetchAll();
-
+							$categorias = Blog::getAllCategories();
+							
 							foreach($categorias as $key => $value) :
 						?>
 							<option <?php if (isset($url[1]) && $value['slug'] == $url[1]) echo 'selected'; ?> value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
@@ -171,6 +169,6 @@
 <!-- container-portal -->
 <?php
 	else:
-		require_once 'noticia_single.php';
+		require_once 'post.php';
 	endif;
 ?>
