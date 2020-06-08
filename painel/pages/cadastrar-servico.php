@@ -7,8 +7,8 @@
 			if(isset($_POST['acao'])){
 				
 				$serviceInfo = [
-					addslashes($_POST['icone-servico']),
-					addslashes($_POST['titulo-servico']),
+					addslashes($_POST['icone_servico']),
+					addslashes($_POST['titulo_servico']),
 					addslashes($_POST['descricao_servico']),
 					addslashes($_POST['order_id'])
 				];
@@ -24,17 +24,17 @@
 
 		<div class="form-group">
 			<label>Ícone do Serviço:</label>
-			<input type="text" name="icone-servico" />
+			<input type="text" name="icone_servico" />
 		</div><!--form-group-->
 
 		<div class="form-group">
 			<label>Título do Servico:</label>
-			<input type="text" name="titulo-servico" />
+			<input type="text" name="titulo_servico" />
 		</div><!--form-group-->
 
 		<div class="form-group">
 			<label>Descrição do Servico:</label>
-			<textarea name="descricao-servico"></textarea>
+			<textarea name="descricao_servico"></textarea>
 		</div><!--form-group-->
 
 		<div class="form-group">

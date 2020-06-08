@@ -23,7 +23,7 @@
 	define('HOST','localhost');
 	define('USER','root');
 	define('PASSWORD','');
-	define('DATABASE','projeto_01');
+	define('DATABASE','gustavoalvesdev');
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','Danki Code');
