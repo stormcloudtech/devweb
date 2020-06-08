@@ -283,6 +283,10 @@ table td{
 
 
 table a.btn{
+	display: inline-block;
+	width: 70px;
+	border-radius: 10px;
+	text-align: center;
 	font-weight: normal;
 	font-size: 13px;
 	color: white;
@@ -292,7 +296,7 @@ table a.btn{
 
 a.btn.edit{background: #F4B03E;}
 a.btn.delete{background: #E05C4E;}
-a.btn.order{background: #0091ea;}
+a.btn.order{background: #0091ea; width: 30px; border-radius: 5px}
 
 
 /*Paginacao*/

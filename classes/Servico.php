@@ -18,4 +18,10 @@ class Servico
 		$services = $sql->fetchAll();
 		return $services;
 	}
+
+	public static function deleteService($serviceId)
+	{
+		$sql = MySql::conectar()->prepare('DELETE FROM `tb_site.servicos` WHERE id = ?');
+		$sql->execute(array($serviceId));
+	}
 }
