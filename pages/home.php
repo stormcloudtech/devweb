@@ -26,7 +26,7 @@
 		</div><!--w50-->
 		<div class="w50 left">
 			<!--Pegar imagem depois-->
-			<img class="right" src="<?php echo INCLUDE_PATH; ?>images/foto.jpg" />
+			<img class="right" src="<?php echo INCLUDE_PATH; ?>images/foto.jpg" alt="Foto de guilherme grillo focando em seu rosto, sorrindo, com uma camisa xadrez em tom azul" title="Foto de Perfil Gulherme Grillo"  />
 		</div><!--w50-->
 		<div class="clear"></div>
 		</div><!--center-->

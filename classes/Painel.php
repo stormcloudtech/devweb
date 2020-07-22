@@ -86,7 +86,7 @@
 		public static function uploadFile($file){
 			$formatoArquivo = explode('.',$file['name']);
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
-			if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome))
+			if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.$imagemNome))
 				return $imagemNome;
 			else
 				return false;

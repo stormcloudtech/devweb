@@ -10,12 +10,13 @@
 <html>
 <head>
 	<title><?php echo $infoSite['titulo']; ?></title>
-	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="palavras-chave,do,meu,site">
-	<meta name="description" content="Descrição do meu website">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Gustavo Alves da Silva" />
+	<meta name="keywords" content="sistemas web,websites,lojas virtuais,desenvolvimento de sites em são paulo,fazer site,site grátis,web design,vender mais" />
+	<meta name="description" content="Website da conceituada agência de desenvolvimento web Danki Code. Entre em contato: (11) 99653-1308" />
 	<link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="image/x-icon" />
 	<meta charset="utf-8" />
 </head>
@@ -47,11 +48,11 @@
 			<div class="logo left"><a href="<?= INCLUDE_PATH; ?>">Logomarca</a></div><!--logo-->
 			<nav class="desktop right">
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>noticias">Notícias</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+					<li><a title="Home" href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+					<li><a title="Depoimentos" href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a title="Serviços" href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a title="Notícias" href="<?php echo INCLUDE_PATH; ?>noticias">Notícias</a></li>
+					<li><a title="Contato" realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 			 <nav class="mobile right">
@@ -59,11 +60,11 @@
 			 		<i class="fa fa-bars" aria-hidden="true"></i>
 			 	</div>
 				<ul>
-					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>noticias">Notícias</a></li>
-					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+					<li><a title="Home" href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+					<li><a title="Depoimentos" href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
+					<li><a title="Serviços" href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+					<li><a title="Notícias" href="<?php echo INCLUDE_PATH; ?>noticias">Notícias</a></li>
+					<li><a title="Contato" realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
 		<div class="clear"></div><!--clear-->

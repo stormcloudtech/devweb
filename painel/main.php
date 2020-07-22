@@ -53,6 +53,8 @@
 				<a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
 				<a <?php selecionadoMenu('cadastrar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
 				<a <?php selecionadoMenu('gerenciar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
+				<h2>Gestão de clientes</h2>
+				<a <?php selecionadoMenu('cadastrar-clientes'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-clientes">Cadastrar Clientes</a>
 			</div><!--items-menu-->
 			</div><!--menu-wraper-->
 		</div><!--menu-->
@@ -82,6 +84,7 @@
 		<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/jquery.mask.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
+		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/jquery.form.min.js"></script>
 		<!-- tinymce -->
 		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 		<script>
@@ -91,5 +94,7 @@
 				height: 300 
 			});
 		</script>
+		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/helpermask.js"></script>
+		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/ajax.js"></script>
 	</body>
 </html>

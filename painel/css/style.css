@@ -440,8 +440,7 @@ a.btn.order{background: #0091ea;}
 }
 
 .box-content form input[type=submit]{
-	width: 100px;
-	height: 40px;
+	padding: 10px;
 	cursor: pointer;
 	margin-top: 10px;
 	font-size: 16px;
