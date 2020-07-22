@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= ICONS_URL; ?>">
 	<link href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
 </head>
 	<body>
@@ -22,7 +22,7 @@
 					if($_SESSION['img'] == ''){
 				?>
 					<div class="avatar-usuario">
-						<i class="fa fa-user"></i>
+						<i class="fas fa-user"></i>
 					</div><!--avatar-usuario-->
 				<?php }else{ ?>
 					<div class="imagem-usuario">

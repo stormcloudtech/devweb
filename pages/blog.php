@@ -1,10 +1,8 @@
 <?php 
 	$url = explode('/', $_GET['url']);
 	if (!isset($url[2])) :
-		$categoria = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` WHERE slug = ?');
-		@$categoria->execute(array($url[1]));
-		$categoria = $categoria->fetch();
-?>
+		@$categoria = Blog::getCategoriaBySlug($url[1]);		
+?>	
 <section class="header-noticias">
 	<div class="center">
 		<h2><i class="fa fa-bell-o" aria-hidden="true"></i></h2>
@@ -14,7 +12,7 @@
 </section>
 <!-- header-noticias -->
 <section class="container-portal">
-	<div class="center">
+	<div class="container">
 		<div class="sidebar">
 			<div class="box-content-sidebar">
 				<h3><i class="fa fa-search" aria-hidden="true"></i> Realizar uma busca</h3>
@@ -30,10 +28,8 @@
 					<select name="categoria">
 						<option value="">Todas as categorias</option>
 						<?php 
-							$categorias = MySql::conectar()->prepare('SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC');
-							$categorias->execute();
-							$categorias = $categorias->fetchAll();
-
+							$categorias = Blog::getAllCategories();
+							
 							foreach($categorias as $key => $value) :
 						?>
 							<option <?php if (isset($url[1]) && $value['slug'] == $url[1]) echo 'selected'; ?> value="<?= $value['slug']; ?>"><?= $value['nome']; ?></option>
@@ -54,7 +50,7 @@
 							$infoSite = $infoSite->fetch();
 						?>
 						<h3><?= $infoSite['nome_autor']; ?></h3>
-						<p><?= substr($infoSite['descricao'], 0, 400).'...' ?><a href="<?= INCLUDE_PATH; ?>descricao-autor">Saiba Mais</a></p>
+						<p><?= substr($infoSite['descricao'], 0, 400).'...' ?><a href="<?= INCLUDE_PATH; ?>sobre-equipe">Saiba Mais</a></p>
 					</div>
 					<!-- texto-autor-portal -->
 				</div>
@@ -122,7 +118,7 @@
 				<p>
 					<?= strip_tags(substr($value['conteudo'], 0, 300)).'...'; ?>
 				</p>
-				<a href="<?= INCLUDE_PATH; ?>noticias/<?= $categoriaSlug; ?>/<?= $value['slug']; ?>">Leia mais</a>
+				<a href="<?= INCLUDE_PATH; ?>blog/<?= $categoriaSlug; ?>/<?= $value['slug']; ?>">Leia mais</a>
 			</div>
 			<!-- box-single-conteudo -->
 			<?php 
@@ -154,9 +150,9 @@
 							$catStr = '';
 						}
 						if ((int)$pagina == $i)
-							echo '<a class="active-page" href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+							echo '<a class="active-page" href="'.INCLUDE_PATH.'blog'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
 						else 
-							echo '<a href="'.INCLUDE_PATH.'noticias'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
+							echo '<a href="'.INCLUDE_PATH.'blog'.$catStr.'?pagina='.$i.'">'.$i.'</a>';
 						// 15:40 - PHP portal 3/5
 					}
 				?>
@@ -168,11 +164,11 @@
 		<div class="clear"></div>
 		<!-- clear -->
 	</div>
-	<!-- center -->
+	<!-- container -->
 </section>
 <!-- container-portal -->
 <?php
 	else:
-		require_once 'noticia_single.php';
+		require_once 'post.php';
 	endif;
 ?>
