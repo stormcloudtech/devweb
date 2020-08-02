@@ -496,14 +496,78 @@ form .form-group-login:nth-of-type(2){
 	top: 10px;
 }
 
+.box-single-wrapper {
+	float: left;
+	width: 100%;
+	padding: 20px;
+}
+
+.box-single {
+	width: calc(33.333% - 20px);
+    border: 1px solid #ccc;
+    min-height: 300px;
+    float: left;
+    margin: 10px;
+	word-wrap: break-word;
+}
+
+.topo-box {
+	text-align: center;
+	color:  #ccc;
+	padding: 8px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.topo-box h2 {
+	font-size: 36px;
+}
+
+.body-box {
+	padding: 10px;
+}
+
+.body-box p {
+	color: #646464;
+	font-size: 15px;
+	margin-bottom: 8px;
+}
+
+.group-btn a {
+	 display: inline-block;
+	 text-decoration: none;
+	 color: white;
+	 padding: 3px 8px;
+}
+
+.group-btn {
+	margin-top: 15px;
+}
+
+@media screen and (max-width: 1100px){
+	.box-single {
+		width: calc(50% - 20px);
+		min-height: 0;
+	}
+	
+	.box-metrica-single{
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 1024px){
 	.box-metrica-single{
 		width: 100%;
 	}
 }
 
+@media screen and (max-width: 900px) {
+	.box-single {
+		width: 100%;
+		min-height: 0;
+	}
+}
+
 @media screen and (max-width: 768px){
-	
 	.content{
 		width: 100%;
 		left: 0;

@@ -12,7 +12,7 @@
 	spl_autoload_register($autoload);
 
 
-	define('INCLUDE_PATH','http://localhost/gustavoalvesdev/');
+	define('INCLUDE_PATH','http://localhost/devweb/');
 	define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
 	define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
 
@@ -23,10 +23,10 @@
 	define('HOST','localhost');
 	define('USER','root');
 	define('PASSWORD','');
-	define('DATABASE','gustavoalvesdev');
+	define('DATABASE','projeto_01');
 
 	//Constantes para o painel de controle
-	define('NOME_EMPRESA','Danki Code');
+	define('NOME_EMPRESA','Gustavo Alves Dev');
 
 	//Funções do painel
 	function pegaCargo($indice){

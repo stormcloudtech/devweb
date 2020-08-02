@@ -7,6 +7,14 @@
 		'0' => 'Normal',
 		'1' => 'Sub Administrador',
 		'2' => 'Administrador'];
+
+		public static function loadJS($files, $page) {
+			if ($page == $_GET['url']) {
+				foreach($files as $key => $value) {
+					echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+				}
+			}
+		}
 		
 		public static function generateSlug($str){
 			$str = mb_strtolower($str);
@@ -86,7 +94,7 @@
 		public static function uploadFile($file){
 			$formatoArquivo = explode('.',$file['name']);
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
-			if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.$imagemNome))
+			if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.$imagemNome))
 				return $imagemNome;
 			else
 				return false;

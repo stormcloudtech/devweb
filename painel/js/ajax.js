@@ -17,7 +17,7 @@ $(function(){
 			if (data.sucesso) {
 				$('.ajax').prepend('<div class="box-alert sucesso"><i class="fa fa-check"></i> O cliente foi inserido com sucesso!</div>')
 			} else {
-				$('.ajax').prepend('<div class="box-alert erro"><i class="fa fa-times"></i> Ocorreram os seguintes erros: <strong>' + data.mensagem + '</strong></div>')
+				$('.ajax').prepend('<div class="box-alert erro"><i class="fa fa-times"></i> <strong>' + data.mensagem + '</strong></div>')
 			}
 
 			console.log(data)

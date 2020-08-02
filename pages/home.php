@@ -19,21 +19,6 @@
 </section>
 <!-- main-bg -->
 
-<<<<<<< HEAD
-	<section class="descricao-autor" id="descricao-autor">
-		<div class="center">
-		<div class="w50 left">
-			<h2><?php echo $infoSite['nome_autor']; ?></h2>
-			<p><?php echo $infoSite['descricao']; ?></p>
-		</div><!--w50-->
-		<div class="w50 left">
-			<!--Pegar imagem depois-->
-			<img class="right" src="<?php echo INCLUDE_PATH; ?>images/foto.jpg" alt="Foto de guilherme grillo focando em seu rosto, sorrindo, com uma camisa xadrez em tom azul" title="Foto de Perfil Gulherme Grillo"  />
-		</div><!--w50-->
-		<div class="clear"></div>
-		</div><!--center-->
-	</section><!--descricao-autor-->
-=======
 <section class="servicos" id="servicos">
     <div class="container">
         <div class="line-text">
@@ -71,7 +56,6 @@
     <!-- container -->
 </section>
 <!-- servicos -->
->>>>>>> f001704b51c2c6167f617e30d36ba6d9acc5fe8d
 
 <section class="sobre-equipe" id="sobre-equipe">
     <div class="container">

@@ -47,6 +47,11 @@ if ($tipo == 'fisico') {
 
 $imagem = '';
 
+if ($nome == '' || $email == '' || $tipo == '') {
+	$data['sucesso'] = false;
+	$data['mensagem'] = 'Atenção: Campos vazios não são permitidos!';
+}
+
 if (isset($_FILES['imagem'])) {
 	if (Painel::imagemValida($_FILES['imagem'])) {	
 		$imagem = $_FILES['imagem'];
