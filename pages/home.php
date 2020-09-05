@@ -82,13 +82,23 @@
                 <h2>Sobre</h2>
             </div>
             <!-- line-text -->
-
             <p>
-                <?php if (strlen($infoSite['descricao']) > 720): ?>
-                    <?= $infoSite['descricao'].'...'; ?>
-                <?php else: ?>  
-                    <?= $infoSite['descricao']; ?>
-                <?php endif; ?>
+                <?php 
+                    if (isset($infoSite['descricao'])) {
+
+                        if ($strlen($infoSite['descricao']) > 720) {
+                            echo $infoSite['descricao'].'...';
+                        } else {
+                            echo $infoSite['descricao'];
+                        }
+
+                    } else {
+
+                        echo 'Add website decription here';
+
+                    }
+
+                ?>
             </p>
         </div>
         <!-- sobre-container -->
