@@ -18,3 +18,4 @@ To clone this repository:
 ```shell
 $ git clone https://github.com/gustavoalvesdev/php-admin-panel-website.git
 ```
+In root directory there is a SQL file called "projeto_01.sql" containing the database for this project. Use this file to create the database on your machine.
