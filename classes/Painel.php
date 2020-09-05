@@ -92,12 +92,15 @@
 		}
 
 		public static function uploadFile($file){
+
 			$formatoArquivo = explode('.',$file['name']);
+			var_dump($formatoArquivo);
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
-			if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.$imagemNome))
+			if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'/uploads'.'/'.$imagemNome)) {
 				return $imagemNome;
-			else
-				return false;
+			}
+
+			return false;
 		}
 
 		public static function deleteFile($file){
