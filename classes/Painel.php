@@ -8,6 +8,13 @@
 		'1' => 'Sub Administrador',
 		'2' => 'Administrador'];
 
+		/**
+		 * 
+		 * Carrega os arquivos JS específicos de cada url a partir da
+		 * url passada como parâmetro
+		 * 
+		 */
+
 		public static function loadJS($files, $page) {
 			if ($page == $_GET['url']) {
 				foreach($files as $key => $value) {
@@ -94,7 +101,7 @@
 		public static function uploadFile($file){
 
 			$formatoArquivo = explode('.',$file['name']);
-			var_dump($formatoArquivo);
+			
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
 			if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'/uploads'.'/'.$imagemNome)) {
 				return $imagemNome;
@@ -110,6 +117,8 @@
 		public static function insert($arr){
 			$certo = true;
 			$nome_tabela = $arr['nome_tabela'];
+
+			// verifica o número de parâmetros que deverão ser passados na query
 			$query = "INSERT INTO `$nome_tabela` VALUES (null";
 			foreach ($arr as $key => $value) {
 				$nome = $key;
@@ -125,12 +134,13 @@
 			}
 
 			$query.=")";
-			if($certo == true){
+
+			if($certo){
 				$sql = MySql::conectar()->prepare($query);
 				$sql->execute($parametros);
 				$lastId = MySql::conectar()->lastInsertId();
-				$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = $lastId");
-				$sql->execute(array($lastId));
+				$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = ?");
+				$sql->execute(array($lastId, $lastId));
 			}
 			return $certo;
 		}

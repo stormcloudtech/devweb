@@ -24,10 +24,13 @@
 							$imagem = Painel::uploadFile($capa);
 							$slug = Painel::generateSlug($titulo);
 							$arr = ['categoria_id' => $categoria_id, 'data' => date('Y-m-d'), 'titulo' => $titulo, 'conteudo' => $conteudo, 'capa' => $imagem, 'slug' => $slug, 'order_id' => '0', 'nome_tabela' => 'tb_site.noticias'];
+
 							if (Painel::insert($arr)) {
 								Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticias?sucesso');
 								//Painel::alert('sucesso', 'O cadastro da notícia foi realizado com sucesso!');
 							}
+
+							//Painel::insert($arr);
 
 						} else {
 							Painel::alert('erro', 'Já existe uma notíca com este nome!');

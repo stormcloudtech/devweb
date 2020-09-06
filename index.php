@@ -9,8 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $infoSite['titulo']; ?></title>
-	<!-- <link rel="stylesheet" href="<?php // echo INCLUDE_PATH; ?>estilo/font-awesome.min.css"> -->
+	<title><?= $infoSite['titulo'] ?></title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="<?php echo INCLUDE_PATH; ?>estilo/style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/animate.css" />
@@ -35,10 +34,6 @@
 				break;
 		}
 	?>
-	<div class="sucesso">Formulário enviado com sucesso!</div>
-	<!-- <div class="overlay-loading">
-		<img src="<?php echo INCLUDE_PATH ?>images/ajax-loader.gif" />
-	</div><!--overlay-loading--> 
 
 	<header>
 		<div class="container">

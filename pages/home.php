@@ -86,7 +86,7 @@
                 <?php 
                     if (isset($infoSite['descricao'])) {
 
-                        if ($strlen($infoSite['descricao']) > 720) {
+                        if (strlen($infoSite['descricao']) > 720) {
                             echo $infoSite['descricao'].'...';
                         } else {
                             echo $infoSite['descricao'];

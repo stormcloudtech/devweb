@@ -12,7 +12,11 @@
 			<?php foreach($clientes as $value): ?>
 			<div class="box-single">
 				<div class="topo-box">
-					<h2><i class="fa fa-user"></i></h2>
+					<?php if ($value['imagem']) : ?>
+						<h2><img src="<?= INCLUDE_PATH_PAINEL.'/uploads'.'/'.$value['imagem'] ?>" alt="<?= $value['nome'] ?>" style="max-width:80%; max-height:130px;" /></h2>
+					<?php else: ?>
+						<h2><i class="fa fa-user"></i></h2>
+					<?php endif; ?>
 				</div>
 				<!-- topo-box -->
 				<div class="body-box">

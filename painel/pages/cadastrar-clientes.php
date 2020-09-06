@@ -4,7 +4,7 @@
 <div class="box-content">
 	<h2><i class="fa fa-pencil"></i>Cadastrar Clientes</h2>
 
-	<form class="ajax" action="<?= INCLUDE_PATH_PAINEL; ?>ajax/forms.php" method="post" enctype="multipart/form-data">
+	<form class="form-clientes" action="<?= INCLUDE_PATH_PAINEL; ?>ajax/form-clientes.php" method="post" enctype="multipart/form-data">
 		
 		<div class="form-group">
 			<label>Nome:</label>
@@ -52,7 +52,7 @@
 		<!--form-group-->
 
 	</form>
-
+	<!-- form-clientes -->
 
 
 </div><!--box-content-->

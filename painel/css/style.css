@@ -513,6 +513,7 @@ form .form-group-login:nth-of-type(2){
 
 .topo-box {
 	text-align: center;
+	height: 150px;
 	color:  #ccc;
 	padding: 8px 0;
 	border-bottom: 1px solid #ccc;
@@ -524,6 +525,7 @@ form .form-group-login:nth-of-type(2){
 
 .body-box {
 	padding: 10px;
+	min-height: 230px;
 }
 
 .body-box p {
