@@ -16,7 +16,7 @@
 		 */
 
 		public static function loadJS($files, $page) {
-			if ($page == $_GET['url']) {
+			if (isset($_GET['url']) && $page == $_GET['url']) {
 				foreach($files as $key => $value) {
 					echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
 				}
@@ -103,7 +103,7 @@
 			$formatoArquivo = explode('.',$file['name']);
 			
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
-			if(move_uploaded_file($file['tmp_name'], BASE_DIR_PAINEL.'/uploads'.'/'.$imagemNome)) {
+			if(move_uploaded_file($file['tmp_name'], 'uploads'.'/'.$imagemNome)) {
 				return $imagemNome;
 			}
 
@@ -183,6 +183,26 @@
 				}
 			}
 			return $certo;
+		}
+
+		public static function selectFunctions() {
+			$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.funcoes`");
+			$sql->execute();
+			return $sql->fetchAll();
+		}
+
+		public static function alterFunction($funcao_id, $funcaoHabilitada) {
+			$sql = MySql::conectar()->prepare("UPDATE `tb_site.funcoes` SET habilitada = :habilitada WHERE id = :id");
+			$sql->bindValue(':habilitada', $funcaoHabilitada);
+			$sql->bindValue(':id', $funcao_id);
+			return $sql->execute();
+		}
+
+		public static function searchFunction($function_description) {
+			$sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.funcoes` WHERE descricao = :descricao");
+			$sql->bindValue(':descricao', $function_description);
+			$sql->execute();
+			return $sql->fetch();
 		}
 
 		public static function selectAll($tabela,$start = null,$end = null){

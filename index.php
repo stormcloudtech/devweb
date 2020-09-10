@@ -5,6 +5,7 @@
 	$infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
 	$infoSite->execute();
 	$infoSite = $infoSite->fetch();
+	$blogFunction = Painel::searchFunction('blog');
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,9 @@
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>sobre-equipe">Sobre</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>blog">Blog</a></li>
+					<?php if ($blogFunction['habilitada'] == 1): ?>
+						<li><a href="<?php echo INCLUDE_PATH; ?>blog">Blog</a></li>
+					<?php endif; ?>
 					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
@@ -55,7 +58,9 @@
 					<li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>sobre-equipe">Sobre</a></li>
 					<li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-					<li><a href="<?php echo INCLUDE_PATH; ?>Blog">Blog</a></li>
+					<?php if ($blogFunction['habilitada'] == 1): ?>
+						<li><a href="<?php echo INCLUDE_PATH; ?>blog">Blog</a></li>
+					<?php endif; ?>
 					<li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 				</ul>
 			</nav>
@@ -152,7 +157,7 @@
 		if($url[0] == 'contato'){
 	?>
 	<?php } ?>
-	<!--<script src="<?php echo INCLUDE_PATH; ?>js/exemplo.js"></script>-->
+
 	<script src="<?php echo INCLUDE_PATH; ?>js/formularios.js"></script>
 </body>
 </html>

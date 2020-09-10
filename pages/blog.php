@@ -1,4 +1,9 @@
 <?php 
+	$blogFunction = Painel::searchFunction('blog');
+
+	if ($blogFunction['habilitada'] == 1) :
+?>
+<?php 
 	$url = explode('/', $_GET['url']);
 	if (!isset($url[2])) :
 		@$categoria = Blog::getCategoriaBySlug($url[1]);		
@@ -172,3 +177,6 @@
 		require_once 'post.php';
 	endif;
 ?>
+<?php else: ?>
+	<?php Painel::redirect(INCLUDE_PATH); ?>
+<?php endif; ?>

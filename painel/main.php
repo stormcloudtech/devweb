@@ -48,6 +48,7 @@
 				<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuário</a>
 				<h2>Configuração Geral</h2>
 				<a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
+				<a <?php selecionadoMenu('habilitar-funcoes'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>habilitar-funcoes">Habilitar Funções</a>
 				<h2>Gestão de Notícias</h2>
 				<a <?php selecionadoMenu('cadastrar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar Categorias</a>
 				<a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>

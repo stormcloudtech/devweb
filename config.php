@@ -12,7 +12,7 @@
 	spl_autoload_register($autoload);
 
 
-	define('INCLUDE_PATH','http://localhost/php-admin-panel-website/');
+	define('INCLUDE_PATH','http://localhost/devweb/');
 	define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
 	define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
 

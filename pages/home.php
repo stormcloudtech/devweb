@@ -1,6 +1,7 @@
 <?php 
 
     $postsRecentes = Blog::postsRecentes(3);
+    $blogFunction = Painel::searchFunction('blog');
 
 ?>
 <section class="main-bg">
@@ -107,6 +108,7 @@
 </section>
 <!-- sobre-equipe -->
 
+<?php if ($blogFunction['habilitada'] == 1): ?>
 <section class="posts-recentes">
     <div class="container">
         <div class="line-text">
@@ -140,6 +142,7 @@
     <!-- container -->
 </section>
 <!-- posts-recentes -->
+<?php endif; ?>
 
 <section class="contato">
     <div class="container">
