@@ -2,6 +2,9 @@
 
 	session_start();
 	date_default_timezone_set('America/Sao_Paulo');
+
+	require_once 'environment.php';
+
 	$autoload = function($class){
 		if($class == 'Email'){
 			require_once('classes/phpmailer/PHPMailerAutoLoad.php');
@@ -12,18 +15,35 @@
 	spl_autoload_register($autoload);
 
 
-	define('INCLUDE_PATH','http://localhost/devweb/');
-	define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
-	define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
+	if (ENVIRONMENT === 'development') {
+		define('INCLUDE_PATH','http://localhost/devweb/');
+		define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
+		define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
 
-	define('BASE_DIR_PAINEL',__DIR__.'/painel');
+		define('BASE_DIR_PAINEL',__DIR__.'/painel');
+
+		define('HOST','localhost');
+		define('USER','root');
+		define('PASSWORD','');
+		define('DATABASE','projeto_01');
+	} else if (ENVIRONMENT === 'production') {
+		define('INCLUDE_PATH','https://gustavoalvesdev.com.br/');
+		define('INCLUDE_PATH_PAINEL',INCLUDE_PATH.'painel/');
+		define('ICONS_URL', INCLUDE_PATH.'fonts/css/all.css');
+
+		define('BASE_DIR_PAINEL',__DIR__.'/painel');
+
+		define('HOST','localhost');
+		define('USER','gustavo_site');
+		define('PASSWORD','Y](nc8o/L2#');
+		define('DATABASE','projeto_01');
+	}
+
+	
 
 
 	//Conectar com banco de dados!
-	define('HOST','localhost');
-	define('USER','root');
-	define('PASSWORD','');
-	define('DATABASE','projeto_01');
+	
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','Gustavo Alves Dev');

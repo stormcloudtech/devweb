@@ -1,5 +1,5 @@
 <div class="box-content">
-	<h2><i class="fa fa-pencil"></i> Adicionar Depoimentos</h2>
+	<h2><i class="fas fa-pencil-edit"></i> Adicionar Depoimentos</h2>
 
 	<form class="form-depoimentos" method="post" enctype="multipart/form-data" action="<?= INCLUDE_PATH_PAINEL; ?>ajax/form-depoimentos.php">
 

@@ -37,6 +37,19 @@
 			}
 		}
 
+
+		public static function insertSlide(Slide $slide) {
+
+			$sql = 'INSERT INTO `tb.site_slides` (nome, slide, order_id) VALUES(:nome, :slide, :order_id)';
+			$nome = $slide->getNome();
+			$slideImagem = $slide->getSlide();
+			$orderId = $slide->getOrderId();
+			$sql->bindValue(':nome', $nome);
+			$sql->bindValue(':slide', $slideImagem);
+			$sql->bindValue(':order_id', $orderId);
+
+			return $sql->execute();
+		}
 	}
 
 ?>

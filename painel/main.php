@@ -11,7 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="<?= ICONS_URL; ?>">
-	<link href="<?php echo INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?= INCLUDE_PATH_PAINEL ?>css/sweetalert2.min.css">
+	<link href="<?= INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
 </head>
 	<body>
 
@@ -36,11 +37,11 @@
 			</div><!--box-usuario-->
 			<div class="items-menu">
 				<h2>Cadastro</h2>
-				<a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
-				<a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
 				<a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-slides">Cadastrar Slides</a>
 				<h2>Gestão</h2>
+				<a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
 				<a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
+				<a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
 				<a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-servicos">Listar Serviços</a>
 				<a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-slides">Listar Slides</a>
 				<h2>Administração do painel</h2>
@@ -96,8 +97,10 @@
 				height: 300 
 			});
 		</script>
-		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/helpermask.js"></script>
-		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/ajax.js"></script>
+		<script src="<?= INCLUDE_PATH_PAINEL ?>js/helpermask.js"></script>
+		<script src="<?= INCLUDE_PATH_PAINEL ?>js/sweetalert2.all.min.js"></script>
+		<script src="<?= INCLUDE_PATH_PAINEL ?>js/promise-polyfill.js"></script>
+		<script src="<?= INCLUDE_PATH_PAINEL ?>js/ajax.js"></script>
 		<?php Painel::loadJS(array('clientes.js'),'gerenciar-clientes'); ?>
 	</body>
 </html>

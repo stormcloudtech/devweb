@@ -2,7 +2,7 @@
 
     $postsRecentes = Blog::postsRecentes(3);
     $blogFunction = Painel::searchFunction('blog');
-
+    $services = Servico::getAllServices();
 ?>
 <section class="main-bg">
     <div class="overlay"></div>
@@ -28,28 +28,15 @@
         </div>
         <!-- line-text -->
         <div class="icones-servicos">
-            <div class="box-icone-single wow bounceInDown">
-                <h2 class="wow rubberBand"><i class="fas fa-laptop-code"></i></h2>
-                <h3>Websites</h3>
-                <p>
-                    Websites, landing pages, lojas virtuais, portais, páginas de captura e intranets.
-            </div>
-            <!-- box-icone-single -->
-            <div class="box-icone-single wow bounceInDown">
-                <h2 class="wow rubberBand"><i class="fas fa-address-card"></i></h2>
-                <h3>Sistemas</h3>
-                <p>
-                    Sistemas comerciais para cadastro de clientes, controle de estoque, gestão de funcionários, ERPs, integração com NF-e (Nota Fiscal Eletrônica).
-            </div>
-            <!-- box-icone-single -->
-            <div class="box-icone-single wow bounceInDown">
-                <h2 class="wow rubberBand"><i class="fas fa-mobile-alt"></i></i>
-                </h2>
-                <h3>Aplicativos</h3>
-                <p>
-                    Aplicativos de delivery, compras, guias comerciais, catálogos de venda, galeria de fotos, etc
-                </p>
-            </div>
+            <?php foreach($services as $service) : ?>
+                <div class="box-icone-single wow bounceInDown">
+                    <h2 class="wow rubberBand"><i class="<?= $service['icone_servico'] ?>"></i></h2>
+                    <h3><?= $service['titulo_servico'] ?></h3>
+                    <p>
+                        <?= $service['descricao_servico'] ?>
+                    </p>
+                </div>
+            <?php endforeach; ?>
             <div class="clear"></div>
         </div>
         <!-- icones-diferenciais -->

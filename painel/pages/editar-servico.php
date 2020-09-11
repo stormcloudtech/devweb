@@ -8,7 +8,7 @@
 	}
  ?>
 <div class="box-content">
-	<h2><i class="fa fa-pencil"></i> Editar Serviço</h2>
+	<h2><i class="fas fa-pencil-alt"></i> Editar Serviço</h2>
 
 	<form method="post" enctype="multipart/form-data">
 
@@ -24,8 +24,18 @@
 		?>
 
 		<div class="form-group">
-			<label>Servico:</label>
-			<textarea name="servico"><?php echo $servico['servico']; ?></textarea>
+			<label>Ícone do Servico:</label>
+			<input type="text" name="icone_servico" value="<?= $servico['icone_servico'] ?>" />
+		</div><!--form-group-->
+
+		<div class="form-group">
+			<label>Título do Servico:</label>
+			<input type="text" name="titulo_servico" value="<?= $servico['titulo_servico'] ?>" />
+		</div><!--form-group-->
+
+		<div class="form-group">
+			<label>Descrição do Servico:</label>
+			<textarea name="descricao_servico"><?php echo $servico['descricao_servico']; ?></textarea>
 		</div><!--form-group-->
 
 
