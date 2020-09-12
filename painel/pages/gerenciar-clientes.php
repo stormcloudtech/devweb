@@ -25,7 +25,7 @@
 					<p><strong><i class="fas fa-id-badge"></i> Tipo:</strong> <?= $value['tipo']; ?></p>
 					<p><strong><i class="far fa-credit-card"></i> <?= ($value['tipo'] == 'fisico') ? 'CPF:</strong>' : 'CNPJ:</strong>'; ?><?= $value['cpf_cnpj']; ?></p>
 					<div class="group-btn">
-						<a class="btn delete" href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-times"></i> Excluir</a>
+						<a class="btn delete" item_id="<?= $value['id'] ?>" href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-times"></i> Excluir</a>
 						<!-- btn delete -->
 						<a class="btn edit" href="<?= INCLUDE_PATH_PAINEL ?>"><i class="fas fa-pencil-alt"></i> Editar</a>
 					<!-- btn edit -->

@@ -15,11 +15,11 @@
 				$cargo = $_POST['cargo'];
 
 				if($login == ''){
-					Painel::alert('erro','O login está vázio!');
+					Painel::alert('erro','O login está vazio!');
 				}else if($nome == ''){
-					Painel::alert('erro','O nome está vázio!');
+					Painel::alert('erro','O nome está vazio!');
 				}else if($senha == ''){
-					Painel::alert('erro','A senha está vázia!');
+					Painel::alert('erro','A senha está vazia!');
 				}else if($cargo == ''){
 					Painel::alert('erro','O cargo precisa estar selecionado!');
 				}else if($imagem['name'] == ''){
@@ -66,7 +66,7 @@
 			<select name="cargo">
 				<?php
 					foreach (Painel::$cargos as $key => $value) {
-						if($key < $_SESSION['cargo']) echo '<option value="'.$key.'">'.$value.'</option>';
+						if($key <= $_SESSION['cargo']) echo '<option value="'.$key.'">'.$value.'</option>';
 					}
 				?>
 			</select>

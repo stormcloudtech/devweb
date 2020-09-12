@@ -15,7 +15,7 @@
 	<link href="<?= INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
 </head>
 	<body>
-
+		<base base="<?= INCLUDE_PATH_PAINEL ?>">
 		<div class="menu">
 			<div class="menu-wraper">
 			<div class="box-usuario">
@@ -37,27 +37,31 @@
 			</div><!--box-usuario-->
 			<div class="items-menu">
 				<h2>Cadastro</h2>
-				<a <?php selecionadoMenu('cadastrar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-slides">Cadastrar Slides</a>
+				<a <?php selecionadoMenu('cadastrar-slides'); ?> <?php verificaPermissaoMenu(0); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-slides">Cadastrar Slides</a>
+
 				<h2>Gestão</h2>
-				<a <?php selecionadoMenu('cadastrar-depoimento'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
-				<a <?php selecionadoMenu('listar-depoimentos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
-				<a <?php selecionadoMenu('cadastrar-servico'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
-				<a <?php selecionadoMenu('listar-servicos'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-servicos">Listar Serviços</a>
-				<a <?php selecionadoMenu('listar-slides'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-slides">Listar Slides</a>
+				<a <?php selecionadoMenu('cadastrar-depoimento'); ?> <?php verificaPermissaoMenu(0); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimento">Cadastrar Depoimento</a>
+				<a <?php selecionadoMenu('listar-depoimentos'); ?> <?php verificaPermissaoMenu(0); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar Depoimentos</a>
+				<a <?php selecionadoMenu('cadastrar-servico'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-servico">Cadastrar Serviço</a>
+				<a <?php selecionadoMenu('listar-servicos'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-servicos">Listar Serviços</a>
+				<a <?php selecionadoMenu('listar-slides'); ?> <?php verificaPermissaoMenu(0); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>listar-slides">Listar Slides</a>
+
 				<h2>Administração do painel</h2>
-				<a <?php selecionadoMenu('editar-usuario'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
+				<a <?php selecionadoMenu('editar-usuario'); ?> <?php verificaPermissaoMenu(0); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
 				<a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuário</a>
 				<h2>Configuração Geral</h2>
-				<a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
-				<a <?php selecionadoMenu('habilitar-funcoes'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>habilitar-funcoes">Habilitar Funções</a>
+				<a <?php selecionadoMenu('editar-site'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
+				<a <?php selecionadoMenu('habilitar-funcoes'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>habilitar-funcoes">Habilitar Funções</a>
+
 				<h2>Gestão de Notícias</h2>
-				<a <?php selecionadoMenu('cadastrar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar Categorias</a>
-				<a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
-				<a <?php selecionadoMenu('cadastrar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
-				<a <?php selecionadoMenu('gerenciar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
+				<a <?php selecionadoMenu('cadastrar-categorias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar Categorias</a>
+				<a <?php selecionadoMenu('gerenciar-categorias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
+				<a <?php selecionadoMenu('cadastrar-noticias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
+				<a <?php selecionadoMenu('gerenciar-noticias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
+
 				<h2>Gestão de clientes</h2>
-				<a <?php selecionadoMenu('cadastrar-clientes'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-clientes">Cadastrar Clientes</a>
-				<a <?php selecionadoMenu('gerenciar-clientes'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-clientes">Gerenciar Clientes</a>
+				<a <?php selecionadoMenu('cadastrar-clientes'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-clientes">Cadastrar Clientes</a>
+				<a <?php selecionadoMenu('gerenciar-clientes'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-clientes">Gerenciar Clientes</a>
 			</div><!--items-menu-->
 			</div><!--menu-wraper-->
 		</div><!--menu-->
@@ -69,6 +73,7 @@
 				</div><!--menu-btn-->
 
 				<div class="loggout">
+					<a href="<?= INCLUDE_PATH ?>" target="_blank"> <i class="fas fa-eye"></i> <span>Ver Site</span></a>
 					<a <?php if(@$_GET['url'] == ''){ ?> style="background: #60727a;padding: 15px;" <?php } ?> href="<?php echo INCLUDE_PATH_PAINEL ?>"> <i class="fa fa-home"></i> <span>Página Inicial</span></a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout"> <i class="fa fa-window-close"></i> <span>Sair</span></a>
 				</div><!--loggout-->
@@ -101,6 +106,7 @@
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/sweetalert2.all.min.js"></script>
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/promise-polyfill.js"></script>
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/ajax.js"></script>
+		<script src="<?= INCLUDE_PATH ?>js/constants.js"></script>
 		<?php Painel::loadJS(array('clientes.js'),'gerenciar-clientes'); ?>
 	</body>
 </html>

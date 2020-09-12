@@ -3,12 +3,12 @@
 require_once 'forms-config.php';
 
 $nome = $_POST['nome'];
-$imagem = $_FILES['imagem'];
+$imagem = $_FILES['imagem'] ?? '0';
 
-if($nome == ''){
+if($nome == '' || $imagem == '0'){
 
     $data['sucesso'] = false;
-    $data['mensagem'] = 'O campo nome não pode ficar vázio!';
+    $data['mensagem'] = 'Todos os campos devem ser preenchidos!';
 
 }else{
 
