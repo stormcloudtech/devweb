@@ -38,6 +38,7 @@ if ($data['sucesso']) {
 	$sql = MySql::conectar()->prepare('INSERT INTO `tb_admin.clientes` VALUES(null, ?, ?, ?, ?, ?)');
 	$dadoFinal = ($cpf == '') ? $cnpj : $cpf;
 	$sql->execute(array($nome, $email, $tipo, $dadoFinal, $imagem));
+	$data['mensagem'] = 'Cliente cadastrado com sucesso!';
 }
 
 die(json_encode($data));

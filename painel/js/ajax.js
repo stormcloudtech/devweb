@@ -109,4 +109,74 @@ $(function(){
 			//console.log(data)
 		}
 	})
+
+	$('.form-servicos').ajaxForm({
+		dataType: 'json',
+		beforeSend: function() {
+			$("#loadingImage").show();
+			$('.form-servicos').animate({'opacity' : '0.6'})
+			$('.form-servicos').find('input[type=submit]').prop('value', 'Cadastrando...')
+			$('.form-servicos').find('input[type=submit]').attr('disabled', 'true')
+		},
+		success: function(data) {
+			$("#loadingImage").hide();
+			$('.form-servicos').animate({'opacity' : '1'})
+			$('.form-servicos').find('input[type=submit]').prop('value', 'Cadastrar!')
+			$('.form-servicos').find('input[type=submit]').removeAttr('disabled')
+			//$('.box-alert').remove()
+
+			if (data.sucesso) {
+				Swal.fire({
+					title: 'Sucesso!',
+					text: data.mensagem,
+					icon: 'success',
+					confirmButtonText: 'OK!'
+				})
+			} else {
+				Swal.fire({
+					title: 'Erro!',
+					text: data.mensagem,
+					icon: 'error',
+					confirmButtonText: 'OK!'
+				})
+			}
+
+			//console.log(data)
+		}
+	})
+	
+	$('.form-categorias').ajaxForm({
+		dataType: 'json',
+		beforeSend: function() {
+			$("#loadingImage").show();
+			$('.form-categorias').animate({'opacity' : '0.6'})
+			$('.form-categorias').find('input[type=submit]').prop('value', 'Cadastrando...')
+			$('.form-categorias').find('input[type=submit]').attr('disabled', 'true')
+		},
+		success: function(data) {
+			$("#loadingImage").hide();
+			$('.form-categorias').animate({'opacity' : '1'})
+			$('.form-categorias').find('input[type=submit]').prop('value', 'Cadastrar!')
+			$('.form-categorias').find('input[type=submit]').removeAttr('disabled')
+			//$('.box-alert').remove()
+
+			if (data.sucesso) {
+				Swal.fire({
+					title: 'Sucesso!',
+					text: data.mensagem,
+					icon: 'success',
+					confirmButtonText: 'OK!'
+				})
+			} else {
+				Swal.fire({
+					title: 'Erro!',
+					text: data.mensagem,
+					icon: 'error',
+					confirmButtonText: 'OK!'
+				})
+			}
+
+			//console.log(data)
+		}
+	})
 })

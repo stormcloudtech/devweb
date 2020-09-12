@@ -1,26 +1,7 @@
 <div class="box-content">
-	<h2><i class="fa fa-pencil"></i> Adicionar Serviço</h2>
+	<h2><i class="fas fa-pencil-alt"></i> Adicionar Serviço</h2>
 
-	<form method="post" enctype="multipart/form-data">
-
-		<?php
-			if(isset($_POST['acao'])){
-				
-				$serviceInfo = [
-					addslashes($_POST['icone_servico']),
-					addslashes($_POST['titulo_servico']),
-					addslashes($_POST['descricao_servico']),
-					addslashes($_POST['order_id'])
-				];
-
-				if(Servico::insertService($serviceInfo)){
-					Painel::alert('sucesso','O cadastro do serviço foi realizado com sucesso!');
-				}else{
-					Painel::alert('erro','Campos vázios não são permitidos!');
-				}
-			
-			}
-		?>
+	<form class="form-servicos" method="post" enctype="multipart/form-data" action="<?= INCLUDE_PATH_PAINEL; ?>ajax/form-servicos.php">
 
 		<div class="form-group">
 			<label>Ícone do Serviço:</label>
@@ -40,10 +21,11 @@
 		<div class="form-group">
 			<input type="hidden" name="order_id" value="0">
 			<input type="submit" name="acao" value="Cadastrar!">
+			<img src="images/ajax-loader.gif" id="loadingImage" style="display:none" />
 		</div><!--form-group-->
 
 	</form>
-
+	<!-- form-servicos -->
 
 
 </div><!--box-content-->
