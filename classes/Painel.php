@@ -105,8 +105,8 @@
 			
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
 			
-
-			if(move_uploaded_file($file['tmp_name'], 'C:\\xampp\\htdocs\\devweb\\painel\\uploads\\'.$imagemNome)) {
+			// C:\\xampp\\htdocs\\devweb\\painel\\uploads\\
+			if(move_uploaded_file($file['tmp_name'], '../uploads/'.$imagemNome)) {
 				return $imagemNome;
 			}
 
