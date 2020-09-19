@@ -58,10 +58,6 @@
 				<a <?php selecionadoMenu('gerenciar-categorias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
 				<a <?php selecionadoMenu('cadastrar-noticias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastrar Notícias</a>
 				<a <?php selecionadoMenu('gerenciar-noticias'); ?> <?php verificaPermissaoMenu(1); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerenciar Notícias</a>
-
-				<h2>Gestão de clientes</h2>
-				<a <?php selecionadoMenu('cadastrar-clientes'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-clientes">Cadastrar Clientes</a>
-				<a <?php selecionadoMenu('gerenciar-clientes'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-clientes">Gerenciar Clientes</a>
 			</div><!--items-menu-->
 			</div><!--menu-wraper-->
 		</div><!--menu-->

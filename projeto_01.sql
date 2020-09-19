@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Set-2020 às 23:55
+-- Tempo de geração: 19-Set-2020 às 12:34
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.9
 
@@ -5629,39 +5629,6 @@ INSERT INTO `tb_admin.cidades` (`Id`, `IdEstado`, `CodigoMunicipio`, `Nome`, `Uf
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_admin.clientes`
---
-
-CREATE TABLE `tb_admin.clientes` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
-  `cpf_cnpj` varchar(255) NOT NULL,
-  `imagem` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tb_admin.clientes`
---
-
-INSERT INTO `tb_admin.clientes` (`id`, `nome`, `email`, `tipo`, `cpf_cnpj`, `imagem`) VALUES
-(1, 'Gustavo Oliveira', 'gustavo.silva669@etec.sp.gov.br', 'fisico', '404.310.328-07', '5f551e9a508c5.jpg'),
-(2, 'Ricardo Pereira Gomes', 'ricardo.pereira121@ricardo.com.br', 'fisico', '134.124.658-40', '5f5521648cfef.jpg'),
-(3, 'Maria Oliveira da Silva', 'maria@dasilva.com', 'fisico', '234.343.434-23', '5f55273e4f574.png'),
-(4, 'Ricardo Varela Nunes', 'ricardo.varela@varella.com.br', 'fisico', '256.574.142-45', '5f5527bbdf80b.png'),
-(5, 'GustavoAA', 'gustavo.silva217@fatec.sp.gov.br', 'juridico', '54.444.444/4444-44', ''),
-(6, 'GustavoAA', 'gustavo.silva669@etec.sp.gov.br', 'juridico', '54.444.444/4444-44', ''),
-(7, 'GustavoAA', 'gustavo.silva217@fatec.sp.gov.br', 'fisico', '111.111.111-11', ''),
-(8, 'GustavoAA', 'gustavo.silva217@fatec.sp.gov.br', 'juridico', '44.444.444/4444-44', ''),
-(9, 'GustavoAA', 'gustavo_csharp@outlook.com', 'fisico', '111.111.111-11', '5f5c06e126460.PNG'),
-(10, 'Fulano Nascimento', 'fulano@nascimento.com', 'fisico', '125.354.523-12', ''),
-(11, 'Maria Pereira', 'maria@pereira.com', 'fisico', '122.323.425-42', '5f5c2d1e09523.jpg'),
-(12, 'Paulo Nogueira', 'paulo@nogueira.com', 'fisico', '123.243.423-42', '');
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `tb_admin.estados`
 --
 
@@ -5717,6 +5684,13 @@ CREATE TABLE `tb_admin.online` (
   `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `tb_admin.online`
+--
+
+INSERT INTO `tb_admin.online` (`id`, `ip`, `ultima_acao`, `token`) VALUES
+(30, '::1', '2020-09-19 07:27:41', '5f65dce6c7505');
+
 -- --------------------------------------------------------
 
 --
@@ -5760,7 +5734,8 @@ CREATE TABLE `tb_admin.visitas` (
 INSERT INTO `tb_admin.visitas` (`id`, `ip`, `dia`) VALUES
 (18, '::1', '2020-09-05'),
 (19, '::1', '2020-09-09'),
-(20, '::1', '2020-09-11');
+(20, '::1', '2020-09-11'),
+(21, '::1', '2020-09-16');
 
 -- --------------------------------------------------------
 
@@ -5971,12 +5946,6 @@ ALTER TABLE `tb_admin.cidades`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Índices para tabela `tb_admin.clientes`
---
-ALTER TABLE `tb_admin.clientes`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices para tabela `tb_admin.estados`
 --
 ALTER TABLE `tb_admin.estados`
@@ -6059,12 +6028,6 @@ ALTER TABLE `tb_admin.cidades`
   MODIFY `Id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5566;
 
 --
--- AUTO_INCREMENT de tabela `tb_admin.clientes`
---
-ALTER TABLE `tb_admin.clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- AUTO_INCREMENT de tabela `tb_admin.estados`
 --
 ALTER TABLE `tb_admin.estados`
@@ -6074,7 +6037,7 @@ ALTER TABLE `tb_admin.estados`
 -- AUTO_INCREMENT de tabela `tb_admin.online`
 --
 ALTER TABLE `tb_admin.online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `tb_admin.usuarios`
@@ -6086,7 +6049,7 @@ ALTER TABLE `tb_admin.usuarios`
 -- AUTO_INCREMENT de tabela `tb_admin.visitas`
 --
 ALTER TABLE `tb_admin.visitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `tb_site.categorias`
