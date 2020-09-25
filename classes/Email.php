@@ -24,7 +24,7 @@
 
 		}
 
-		public function addAdress($email,$nome){
+		public function addAddress($email,$nome){
 			$this->mailer->addAddress($email,$nome);
 		}
 

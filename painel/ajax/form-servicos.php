@@ -10,6 +10,7 @@ if ($_POST['icone_servico'] == '' || $_POST['titulo_servico'] == ''|| $_POST['de
         addslashes($_POST['icone_servico']),
         addslashes($_POST['titulo_servico']),
         addslashes($_POST['descricao_servico']),
+        $_POST['background_icones'].
         addslashes($_POST['order_id'])
     ];
     

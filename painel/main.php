@@ -9,7 +9,7 @@
 	<title>Painel de Controle</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
 	<link rel="stylesheet" href="<?= ICONS_URL; ?>">
 	<link rel="stylesheet" href="<?= INCLUDE_PATH_PAINEL ?>css/sweetalert2.min.css">
 	<link href="<?= INCLUDE_PATH_PAINEL ?>css/style.css" rel="stylesheet" />
@@ -90,14 +90,14 @@
 		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/jquery.form.min.js"></script>
 		<!-- tinymce -->
-		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-		<script>
+		<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script> -->
+		<!-- <script>
 			tinymce.init({ 
 				selector: '.tinymce',
 				plugins: 'image',
 				height: 300 
 			});
-		</script>
+		</script> -->
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/helpermask.js"></script>
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/sweetalert2.all.min.js"></script>
 		<script src="<?= INCLUDE_PATH_PAINEL ?>js/promise-polyfill.js"></script>

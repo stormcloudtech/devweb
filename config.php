@@ -33,10 +33,10 @@
 
 		define('BASE_DIR_PAINEL',__DIR__.'/painel');
 
-		define('HOST','localhost');
-		define('USER','gustavo_site');
-		define('PASSWORD','Y](nc8o/L2#');
-		define('DATABASE','projeto_01');
+		define('HOST','mysql669.umbler.com');
+		define('USER','gustavoalvesdev');
+		define('PASSWORD',')eB4)(N}3hStf');
+		define('DATABASE','bd_devweb');
 	}
 
 	

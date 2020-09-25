@@ -16,10 +16,14 @@
 		 * 
 		 */
 
-		public static function loadJS($files, $page) {
+		public static function loadJS($files, $page, $painel = true) {
 			if (isset($_GET['url']) && $page == $_GET['url']) {
 				foreach($files as $key => $value) {
-					echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+					if ($painel) {
+						echo '<script src="'.INCLUDE_PATH_PAINEL.'js/'.$value.'"></script>';
+					} else {
+						echo '<script src="'.INCLUDE_PATH.'js/'.$value.'"></script>';
+					}
 				}
 			}
 		}
@@ -105,8 +109,9 @@
 			
 			$imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
 			
+			// Para testar no windows tem que deixar assim ;(
 			// C:\\xampp\\htdocs\\devweb\\painel\\uploads\\
-			if(move_uploaded_file($file['tmp_name'], '../uploads/'.$imagemNome)) {
+			if(move_uploaded_file($file['tmp_name'], 'uploads'.'/'.$imagemNome)) {
 				return $imagemNome;
 			}
 
@@ -114,7 +119,9 @@
 		}
 
 		public static function deleteFile($file){
-			@unlink('uploads/'.$file);
+			// Para testar no windows tem que deixar assim ;(
+			// C:\\xampp\\htdocs\\devweb\\painel\\uploads\\
+			@unlink('uploads'.'/'.$file);
 		}
 
 		public static function insert($arr){
@@ -142,8 +149,11 @@
 				$sql = MySql::conectar()->prepare($query);
 				$sql->execute($parametros);
 				$lastId = MySql::conectar()->lastInsertId();
-				$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = ?");
-				$sql->execute(array($lastId, $lastId));
+				if ($nome_tabela != 'tb_site.config') {
+					$sql = MySql::conectar()->prepare("UPDATE `$nome_tabela` SET order_id = ? WHERE id = ?");
+					$sql->execute(array($lastId, $lastId));
+				}
+				
 			}
 			return $certo;
 		}
@@ -177,9 +187,11 @@
 
 			if($certo == true){
 				if($single == false){
+					
 					$parametros[] = $arr['id'];
 					$sql = MySql::conectar()->prepare($query.' WHERE id=?');
 					$sql->execute($parametros);
+
 				}else{
 					$sql = MySql::conectar()->prepare($query);
 					$sql->execute($parametros);
