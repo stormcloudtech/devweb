@@ -111,6 +111,16 @@
 			
 			// Para testar no windows tem que deixar assim ;(
 			// C:\\xampp\\htdocs\\devweb\\painel\\uploads\\
+			/**
+			 * if(move_uploaded_file($file['tmp_name'], 'C:\\xampp\\htdocs\\devweb\\painel\\uploads\\' . $imagemNome)) {
+			*	return $imagemNome;
+			*}
+			 */
+			// Versão para produção
+			// if(move_uploaded_file($file['tmp_name'], 'uploads'.'/'.$imagemNome)) {
+			// 	return $imagemNome;
+			// }
+
 			if(move_uploaded_file($file['tmp_name'], 'uploads'.'/'.$imagemNome)) {
 				return $imagemNome;
 			}
