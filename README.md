@@ -10,6 +10,11 @@ This is a project of a simple website with admin panel written in Core PHP. In t
 ## Template
 This project uses Beemind website template, which was also developed by me, <b>Gustavo Alves Dev</b>, and can be found in the following repository: <a href="https://github.com/gustavoalvesdev/template-beemind" target="_blank">Template Beemind</a>
 
+![Screenshot da Página Home do Painel](1.PNG "Screenshot da Home do Painel")
+![Screenshot da Págine da Cadastro de Slides do Painel](2.PNG "Screenshot da Página de Cadastro de Slides")
+![Screenshot da Página de Listagem de Despoimentos do Painel](3.PNG "Screenshot da Página de Listagem de Depoimentos")
+![Screenshot da Página de Listagem de Notícias do Painel](4.PNG "Screenshot da Página de Listagem de Notícias do Painel")
+
 ## How To Install
 
 ### Clone
