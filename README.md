@@ -1,28 +1,28 @@
-# PHP Website with admin panel
-This is a project of a simple website with admin panel written in Core PHP. In the panel there are many common features of this kind of project, such as:
+# Site em PHP com Painel Administrativo
+Site com painel administrativo, escrito em PHP com banco de dados MySQL. Algumas funcionalidades presentes no painel:
   
-  - Testimonials (Add, List, Alter, Delete) 
-  - Services (Add, List, Alter, Delete)
-  - Users (Add, List, Alter, Delete)
-  - Website Configurations
-  - Blog News (Add, List, Alter, Delete)
+  - Depoimentos
+  - Serviços
+  - Gestão de Usuários
+  - Configurações de Usuários, Funcionalidades e do Site em Geral
+  - Notícias / Blog
 
 ## Template
-This project uses Beemind website template, which was also developed by me, <b>Gustavo Alves Dev</b>, and can be found in the following repository: <a href="https://github.com/gustavoalvesdev/template-beemind" target="_blank">Template Beemind</a>
+Este projeto usa o template Beemind, também desenvolvido por mim, <b>Gustavo Alves Dev</b>, e pode ser encontrado no seguinte repositório: <a href="https://github.com/gustavoalvesdev/template-beemind" target="_blank">Template Beemind</a>
 
 ![Screenshot da Página Home do Painel](1.PNG "Screenshot da Home do Painel")
 ![Screenshot da Págine da Cadastro de Slides do Painel](2.PNG "Screenshot da Página de Cadastro de Slides")
 ![Screenshot da Página de Listagem de Despoimentos do Painel](3.PNG "Screenshot da Página de Listagem de Depoimentos")
 ![Screenshot da Página de Listagem de Notícias do Painel](4.PNG "Screenshot da Página de Listagem de Notícias do Painel")
 
-## How To Install
+## Como Instalar
 
 ### Clone
 
-To clone this repository:
+Para clonar o repositório:
 ```shell
 $ git clone https://github.com/gustavoalvesdev/php-admin-panel-website.git
 ```
-In root directory there is a SQL file called "projeto_01.sql" containing the database for this project. Use this file to create the database on your machine.
+No diretório raiz há um arquivo chamado "projeto_01.sql" que contém o dump do banco de dados do projeto. Use este arquivo para criar o banco de dados em seu servidor.
 
-Edit the file "config.php" in root directory, with database connection information and the PATH for the project on your machine (I recommend that you use XAMPP)
+Edite o arquivo "config.php" no diretório raiz, com as informações de conexão com o banco de dados e o PATH para o projeto no seu servidor
